@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8AF0072E1AAB6EF2000568E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0072D1AAB6EF2000568E4 /* Foundation.framework */; };
+		8AF007301AAB6EF2000568E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */; };
+		8AF007321AAB6EF2000568E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF007311AAB6EF2000568E4 /* UIKit.framework */; };
+		8AF007381AAB6EF2000568E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AF007361AAB6EF2000568E4 /* InfoPlist.strings */; };
+		8AF0073A1AAB6EF2000568E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF007391AAB6EF2000568E4 /* main.m */; };
+		8AF0073E1AAB6EF2000568E4 /* faAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0073D1AAB6EF2000568E4 /* faAppDelegate.m */; };
+		8AF007411AAB6EF2000568E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF0073F1AAB6EF2000568E4 /* Main.storyboard */; };
+		8AF007441AAB6EF2000568E4 /* faViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF007431AAB6EF2000568E4 /* faViewController.m */; };
+		8AF007461AAB6EF2000568E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF007451AAB6EF2000568E4 /* Images.xcassets */; };
+		8AF0074D1AAB6EF2000568E4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0074C1AAB6EF2000568E4 /* XCTest.framework */; };
+		8AF0074E1AAB6EF2000568E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0072D1AAB6EF2000568E4 /* Foundation.framework */; };
+		8AF0074F1AAB6EF2000568E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF007311AAB6EF2000568E4 /* UIKit.framework */; };
+		8AF007571AAB6EF2000568E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AF007551AAB6EF2000568E4 /* InfoPlist.strings */; };
+		8AF007591AAB6EF2000568E4 /* FliterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF007581AAB6EF2000568E4 /* FliterAppTests.m */; };
+		8AF007681AAB6F73000568E4 /* ImageFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF007671AAB6F73000568E4 /* ImageFiltersViewController.m */; };
+		8AF0076C1AAB7025000568E4 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AF0076B1AAB7025000568E4 /* sample.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8AF007501AAB6EF2000568E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AF007221AAB6EF2000568E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AF007291AAB6EF2000568E4;
+			remoteInfo = FliterApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8AF0072A1AAB6EF2000568E4 /* FliterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FliterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AF0072D1AAB6EF2000568E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8AF007311AAB6EF2000568E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8AF007351AAB6EF2000568E4 /* FliterApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FliterApp-Info.plist"; sourceTree = "<group>"; };
+		8AF007371AAB6EF2000568E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8AF007391AAB6EF2000568E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8AF0073B1AAB6EF2000568E4 /* FliterApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FliterApp-Prefix.pch"; sourceTree = "<group>"; };
+		8AF0073C1AAB6EF2000568E4 /* faAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = faAppDelegate.h; sourceTree = "<group>"; };
+		8AF0073D1AAB6EF2000568E4 /* faAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = faAppDelegate.m; sourceTree = "<group>"; };
+		8AF007401AAB6EF2000568E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8AF007421AAB6EF2000568E4 /* faViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = faViewController.h; sourceTree = "<group>"; };
+		8AF007431AAB6EF2000568E4 /* faViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = faViewController.m; sourceTree = "<group>"; };
+		8AF007451AAB6EF2000568E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8AF0074B1AAB6EF2000568E4 /* FliterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FliterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AF0074C1AAB6EF2000568E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8AF007541AAB6EF2000568E4 /* FliterAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FliterAppTests-Info.plist"; sourceTree = "<group>"; };
+		8AF007561AAB6EF2000568E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8AF007581AAB6EF2000568E4 /* FliterAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FliterAppTests.m; sourceTree = "<group>"; };
+		8AF007661AAB6F73000568E4 /* ImageFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageFiltersViewController.h; path = libraries/ImageFiltersViewController.h; sourceTree = SOURCE_ROOT; };
+		8AF007671AAB6F73000568E4 /* ImageFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageFiltersViewController.m; path = libraries/ImageFiltersViewController.m; sourceTree = SOURCE_ROOT; };
+		8AF0076B1AAB7025000568E4 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8AF007271AAB6EF2000568E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF007301AAB6EF2000568E4 /* CoreGraphics.framework in Frameworks */,
+				8AF007321AAB6EF2000568E4 /* UIKit.framework in Frameworks */,
+				8AF0072E1AAB6EF2000568E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AF007481AAB6EF2000568E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF0074D1AAB6EF2000568E4 /* XCTest.framework in Frameworks */,
+				8AF0074F1AAB6EF2000568E4 /* UIKit.framework in Frameworks */,
+				8AF0074E1AAB6EF2000568E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8AF007211AAB6EF2000568E4 = {
+			isa = PBXGroup;
+			children = (
+				8AF007331AAB6EF2000568E4 /* FliterApp */,
+				8AF007521AAB6EF2000568E4 /* FliterAppTests */,
+				8AF0072C1AAB6EF2000568E4 /* Frameworks */,
+				8AF0072B1AAB6EF2000568E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8AF0072B1AAB6EF2000568E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0072A1AAB6EF2000568E4 /* FliterApp.app */,
+				8AF0074B1AAB6EF2000568E4 /* FliterAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8AF0072C1AAB6EF2000568E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0072D1AAB6EF2000568E4 /* Foundation.framework */,
+				8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */,
+				8AF007311AAB6EF2000568E4 /* UIKit.framework */,
+				8AF0074C1AAB6EF2000568E4 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8AF007331AAB6EF2000568E4 /* FliterApp */ = {
+			isa = PBXGroup;
+			children = (
+				8AF007691AAB700F000568E4 /* resource */,
+				8AF007651AAB6F5E000568E4 /* libraries */,
+				8AF0073C1AAB6EF2000568E4 /* faAppDelegate.h */,
+				8AF0073D1AAB6EF2000568E4 /* faAppDelegate.m */,
+				8AF0073F1AAB6EF2000568E4 /* Main.storyboard */,
+				8AF007421AAB6EF2000568E4 /* faViewController.h */,
+				8AF007431AAB6EF2000568E4 /* faViewController.m */,
+				8AF007451AAB6EF2000568E4 /* Images.xcassets */,
+				8AF007341AAB6EF2000568E4 /* Supporting Files */,
+			);
+			path = FliterApp;
+			sourceTree = "<group>";
+		};
+		8AF007341AAB6EF2000568E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AF007351AAB6EF2000568E4 /* FliterApp-Info.plist */,
+				8AF007361AAB6EF2000568E4 /* InfoPlist.strings */,
+				8AF007391AAB6EF2000568E4 /* main.m */,
+				8AF0073B1AAB6EF2000568E4 /* FliterApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AF007521AAB6EF2000568E4 /* FliterAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AF007581AAB6EF2000568E4 /* FliterAppTests.m */,
+				8AF007531AAB6EF2000568E4 /* Supporting Files */,
+			);
+			path = FliterAppTests;
+			sourceTree = "<group>";
+		};
+		8AF007531AAB6EF2000568E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AF007541AAB6EF2000568E4 /* FliterAppTests-Info.plist */,
+				8AF007551AAB6EF2000568E4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AF007651AAB6F5E000568E4 /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8AF007661AAB6F73000568E4 /* ImageFiltersViewController.h */,
+				8AF007671AAB6F73000568E4 /* ImageFiltersViewController.m */,
+			);
+			name = libraries;
+			sourceTree = "<group>";
+		};
+		8AF007691AAB700F000568E4 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0076A1AAB7017000568E4 /* images */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
+		8AF0076A1AAB7017000568E4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0076B1AAB7025000568E4 /* sample.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8AF007291AAB6EF2000568E4 /* FliterApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AF0075C1AAB6EF2000568E4 /* Build configuration list for PBXNativeTarget "FliterApp" */;
+			buildPhases = (
+				8AF007261AAB6EF2000568E4 /* Sources */,
+				8AF007271AAB6EF2000568E4 /* Frameworks */,
+				8AF007281AAB6EF2000568E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FliterApp;
+			productName = FliterApp;
+			productReference = 8AF0072A1AAB6EF2000568E4 /* FliterApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8AF0074A1AAB6EF2000568E4 /* FliterAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AF0075F1AAB6EF2000568E4 /* Build configuration list for PBXNativeTarget "FliterAppTests" */;
+			buildPhases = (
+				8AF007471AAB6EF2000568E4 /* Sources */,
+				8AF007481AAB6EF2000568E4 /* Frameworks */,
+				8AF007491AAB6EF2000568E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AF007511AAB6EF2000568E4 /* PBXTargetDependency */,
+			);
+			name = FliterAppTests;
+			productName = FliterAppTests;
+			productReference = 8AF0074B1AAB6EF2000568E4 /* FliterAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8AF007221AAB6EF2000568E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = fa;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = SlaaySourceCoders;
+				TargetAttributes = {
+					8AF0074A1AAB6EF2000568E4 = {
+						TestTargetID = 8AF007291AAB6EF2000568E4;
+					};
+				};
+			};
+			buildConfigurationList = 8AF007251AAB6EF2000568E4 /* Build configuration list for PBXProject "FliterApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8AF007211AAB6EF2000568E4;
+			productRefGroup = 8AF0072B1AAB6EF2000568E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8AF007291AAB6EF2000568E4 /* FliterApp */,
+				8AF0074A1AAB6EF2000568E4 /* FliterAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8AF007281AAB6EF2000568E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF007461AAB6EF2000568E4 /* Images.xcassets in Resources */,
+				8AF007381AAB6EF2000568E4 /* InfoPlist.strings in Resources */,
+				8AF007411AAB6EF2000568E4 /* Main.storyboard in Resources */,
+				8AF0076C1AAB7025000568E4 /* sample.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AF007491AAB6EF2000568E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF007571AAB6EF2000568E4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8AF007261AAB6EF2000568E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF0073A1AAB6EF2000568E4 /* main.m in Sources */,
+				8AF0073E1AAB6EF2000568E4 /* faAppDelegate.m in Sources */,
+				8AF007681AAB6F73000568E4 /* ImageFiltersViewController.m in Sources */,
+				8AF007441AAB6EF2000568E4 /* faViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AF007471AAB6EF2000568E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF007591AAB6EF2000568E4 /* FliterAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8AF007511AAB6EF2000568E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AF007291AAB6EF2000568E4 /* FliterApp */;
+			targetProxy = 8AF007501AAB6EF2000568E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8AF007361AAB6EF2000568E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AF007371AAB6EF2000568E4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8AF0073F1AAB6EF2000568E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AF007401AAB6EF2000568E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8AF007551AAB6EF2000568E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AF007561AAB6EF2000568E4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8AF0075A1AAB6EF2000568E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8AF0075B1AAB6EF2000568E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8AF0075D1AAB6EF2000568E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FliterApp/FliterApp-Prefix.pch";
+				INFOPLIST_FILE = "FliterApp/FliterApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8AF0075E1AAB6EF2000568E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FliterApp/FliterApp-Prefix.pch";
+				INFOPLIST_FILE = "FliterApp/FliterApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8AF007601AAB6EF2000568E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FliterApp.app/FliterApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FliterApp/FliterApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FliterAppTests/FliterAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8AF007611AAB6EF2000568E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FliterApp.app/FliterApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FliterApp/FliterApp-Prefix.pch";
+				INFOPLIST_FILE = "FliterAppTests/FliterAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8AF007251AAB6EF2000568E4 /* Build configuration list for PBXProject "FliterApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AF0075A1AAB6EF2000568E4 /* Debug */,
+				8AF0075B1AAB6EF2000568E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AF0075C1AAB6EF2000568E4 /* Build configuration list for PBXNativeTarget "FliterApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AF0075D1AAB6EF2000568E4 /* Debug */,
+				8AF0075E1AAB6EF2000568E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8AF0075F1AAB6EF2000568E4 /* Build configuration list for PBXNativeTarget "FliterAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AF007601AAB6EF2000568E4 /* Debug */,
+				8AF007611AAB6EF2000568E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8AF007221AAB6EF2000568E4 /* Project object */;
+}
