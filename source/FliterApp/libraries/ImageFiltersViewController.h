@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ImageFiltersViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @end

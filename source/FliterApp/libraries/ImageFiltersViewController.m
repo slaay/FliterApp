@@ -7,6 +7,8 @@
 //
 
 #import "ImageFiltersViewController.h"
+#import "SWRevealViewController.h"
+
 
 
 @interface ImageFiltersViewController ()
@@ -14,6 +16,8 @@
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) UIImage *orgImage;
 @property (nonatomic, strong) NSArray *items;
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
+
 @end
 
 
@@ -31,21 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.orgImage = [UIImage imageNamed:@"sample.jpg"];
+    
+    self.orgImage = [UIImage imageNamed:@"1.jpg"];
     self.imageView.image = self.orgImage;
     
     self.items = @[@"Original",
-//                   @"CIBlendWithAlphaMask",
-//                   @"CIColorClamp",
-//                   @"CIColorCrossPolynomial",
-//                   @"CIColorCubeWithColorSpace",
-//                   @"CIColorPolynomial",
-//                   @"CIConvolution3X3",
-//                   @"CIConvolution5X5",
-//                   @"CIConvolution7X7",
-//                   @"CIConvolution9Horizontal",
-//                   @"CIConvolution9Vertical",
                    @"CILinearToSRGBToneCurve",
                    @"CIPhotoEffectChrome",
                    @"CIPhotoEffectFade",
@@ -58,6 +52,23 @@
                    @"CISRGBToneCurveToLinear",
                    @"CIVignetteEffect",
                    ];
+    
+    
+    
+    
+    
+    // Change button color
+    _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sidebarButton.target = self.revealViewController;
+    _sidebarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    //bring conponent on Top
+    [self.view bringSubviewToFront:_pickerView];
 }
 
 - (void)didReceiveMemoryWarning

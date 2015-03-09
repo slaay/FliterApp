@@ -4,15 +4,22 @@
 //
 //  Created by Presley on 07/03/15.
 //  Copyright (c) 2015 SlaaySourceCoders. All rights reserved.
-//
+//http://www.appcoda.com/customize-navigation-status-bar-ios-7/
 
 #import "faAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation faAppDelegate
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB6)];
+
     return YES;
 }
 							
@@ -41,6 +48,9 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    // Logs 'install' and 'app activate' App Events.
+    [FBAppEvents activateApp];
 }
 
 @end
