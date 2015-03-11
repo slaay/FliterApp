@@ -39,6 +39,8 @@
 		8A5D1A3B1AB0AC1D0092E60D /* HFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D1A3A1AB0AC1D0092E60D /* HFViewController.m */; };
 		8A5D1A3D1AB0B0240092E60D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D1A3C1AB0B0240092E60D /* MobileCoreServices.framework */; };
 		8A5D1A3F1AB0B02D0092E60D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D1A3E1AB0B02D0092E60D /* CoreLocation.framework */; };
+		8A5D1A411AB0BA960092E60D /* IMG_20141225_204042.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D1A401AB0BA960092E60D /* IMG_20141225_204042.jpg */; };
+		8A5D1A441AB0BB100092E60D /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D1A431AB0BB100092E60D /* FXBlurView.m */; };
 		8AF0072E1AAB6EF2000568E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0072D1AAB6EF2000568E4 /* Foundation.framework */; };
 		8AF007301AAB6EF2000568E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */; };
 		8AF007321AAB6EF2000568E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF007311AAB6EF2000568E4 /* UIKit.framework */; };
@@ -107,6 +109,9 @@
 		8A5D1A3A1AB0AC1D0092E60D /* HFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFViewController.m; sourceTree = "<group>"; };
 		8A5D1A3C1AB0B0240092E60D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8A5D1A3E1AB0B02D0092E60D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8A5D1A401AB0BA960092E60D /* IMG_20141225_204042.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_20141225_204042.jpg; sourceTree = "<group>"; };
+		8A5D1A421AB0BB100092E60D /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		8A5D1A431AB0BB100092E60D /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		8AF0072A1AAB6EF2000568E4 /* FliterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FliterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF0072D1AAB6EF2000568E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -219,6 +224,15 @@
 			name = controllers;
 			sourceTree = "<group>";
 		};
+		8A5D1A451AB0BB180092E60D /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D1A421AB0BB100092E60D /* FXBlurView.h */,
+				8A5D1A431AB0BB100092E60D /* FXBlurView.m */,
+			);
+			name = FXBlurView;
+			sourceTree = "<group>";
+		};
 		8AF007211AAB6EF2000568E4 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +315,7 @@
 		8AF007651AAB6F5E000568E4 /* libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D1A451AB0BB180092E60D /* FXBlurView */,
 				8A113E471AAE0D3A007A8263 /* SlideMenu */,
 				8A113E461AAE0D2D007A8263 /* Filter */,
 			);
@@ -310,6 +325,7 @@
 		8AF007691AAB700F000568E4 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D1A401AB0BA960092E60D /* IMG_20141225_204042.jpg */,
 				8A53B6311AAF590F001B6A4D /* editePics.png */,
 				8A53B62F1AAF58DC001B6A4D /* Edit.png */,
 				8A53B62B1AAF5892001B6A4D /* profile.png */,
@@ -409,6 +425,7 @@
 				8A113E621AAE0D6B007A8263 /* menu@2x.png in Resources */,
 				8AF007461AAB6EF2000568E4 /* Images.xcassets in Resources */,
 				8A113E6B1AAE0D6B007A8263 /* wishlist.png in Resources */,
+				8A5D1A411AB0BA960092E60D /* IMG_20141225_204042.jpg in Resources */,
 				8A113E641AAE0D6B007A8263 /* bookmark.png in Resources */,
 				8A113E5C1AAE0D6B007A8263 /* comments_photo.jpg in Resources */,
 				8A113E5D1AAE0D6B007A8263 /* bookmark_photo.jpg in Resources */,
@@ -455,6 +472,7 @@
 				8A113E751AAE0DE4007A8263 /* MainViewController.m in Sources */,
 				8AF0073E1AAB6EF2000568E4 /* faAppDelegate.m in Sources */,
 				8A113E771AAE0DE4007A8263 /* MapViewController.m in Sources */,
+				8A5D1A441AB0BB100092E60D /* FXBlurView.m in Sources */,
 				8A113E761AAE0DE4007A8263 /* SidebarViewController.m in Sources */,
 				8A113E4A1AAE0D4A007A8263 /* SWRevealViewController.m in Sources */,
 				8A113E781AAE0DE4007A8263 /* PhotoViewController.m in Sources */,

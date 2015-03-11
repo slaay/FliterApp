@@ -20,6 +20,8 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SWRevealViewController.h"
 #import "faAppDelegate.h"
+#import "FXBlurView.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface HFViewController () <FBLoginViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -31,6 +33,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonPickPlace;
 @property (strong, nonatomic) IBOutlet UILabel *labelFirstName;
 @property (strong, nonatomic) id<FBGraphUser> loggedInUser;
+@property (strong, nonatomic) IBOutlet UIImageView *imgBlur;
+@property (strong, nonatomic) IBOutlet FXBlurView *blurView;
 
 - (IBAction)postStatusUpdateClick:(UIButton *)sender;
 - (IBAction)postPhotoOrVideoClick:(UIButton *)sender;
@@ -84,6 +88,10 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     [self roundedControls:_profilePic];
+    
+    self.blurView.blurRadius = 20;
+    
+    
 }
 
 
