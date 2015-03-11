@@ -31,6 +31,14 @@
 		8A113E781AAE0DE4007A8263 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A113E741AAE0DE4007A8263 /* PhotoViewController.m */; };
 		8A113E7A1AAE1511007A8263 /* teamslaay.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A113E791AAE1511007A8263 /* teamslaay.png */; };
 		8A113E7C1AAE1753007A8263 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A113E7B1AAE1753007A8263 /* 1.jpg */; };
+		8A53B62C1AAF5892001B6A4D /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62B1AAF5892001B6A4D /* profile.png */; };
+		8A53B62E1AAF58A3001B6A4D /* Albums.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62D1AAF58A3001B6A4D /* Albums.png */; };
+		8A53B6301AAF58DC001B6A4D /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62F1AAF58DC001B6A4D /* Edit.png */; };
+		8A53B6321AAF590F001B6A4D /* editePics.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B6311AAF590F001B6A4D /* editePics.png */; };
+		8A53B6351AAF5F1A001B6A4D /* faProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A53B6341AAF5F1A001B6A4D /* faProfileViewController.m */; };
+		8A5D1A3B1AB0AC1D0092E60D /* HFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D1A3A1AB0AC1D0092E60D /* HFViewController.m */; };
+		8A5D1A3D1AB0B0240092E60D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D1A3C1AB0B0240092E60D /* MobileCoreServices.framework */; };
+		8A5D1A3F1AB0B02D0092E60D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D1A3E1AB0B02D0092E60D /* CoreLocation.framework */; };
 		8AF0072E1AAB6EF2000568E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0072D1AAB6EF2000568E4 /* Foundation.framework */; };
 		8AF007301AAB6EF2000568E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */; };
 		8AF007321AAB6EF2000568E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF007311AAB6EF2000568E4 /* UIKit.framework */; };
@@ -89,6 +97,16 @@
 		8A113E741AAE0DE4007A8263 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		8A113E791AAE1511007A8263 /* teamslaay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teamslaay.png; sourceTree = "<group>"; };
 		8A113E7B1AAE1753007A8263 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		8A53B62B1AAF5892001B6A4D /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		8A53B62D1AAF58A3001B6A4D /* Albums.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Albums.png; sourceTree = "<group>"; };
+		8A53B62F1AAF58DC001B6A4D /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
+		8A53B6311AAF590F001B6A4D /* editePics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editePics.png; sourceTree = "<group>"; };
+		8A53B6331AAF5F1A001B6A4D /* faProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faProfileViewController.h; path = controllers/faProfileViewController.h; sourceTree = "<group>"; };
+		8A53B6341AAF5F1A001B6A4D /* faProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = faProfileViewController.m; path = controllers/faProfileViewController.m; sourceTree = "<group>"; };
+		8A5D1A391AB0AC1D0092E60D /* HFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFViewController.h; sourceTree = "<group>"; };
+		8A5D1A3A1AB0AC1D0092E60D /* HFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFViewController.m; sourceTree = "<group>"; };
+		8A5D1A3C1AB0B0240092E60D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8A5D1A3E1AB0B02D0092E60D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8AF0072A1AAB6EF2000568E4 /* FliterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FliterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF0072D1AAB6EF2000568E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,9 +136,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A5D1A3F1AB0B02D0092E60D /* CoreLocation.framework in Frameworks */,
 				8AF007301AAB6EF2000568E4 /* CoreGraphics.framework in Frameworks */,
 				8A113E451AAE0894007A8263 /* FacebookSDK.framework in Frameworks */,
 				8AF007321AAB6EF2000568E4 /* UIKit.framework in Frameworks */,
+				8A5D1A3D1AB0B0240092E60D /* MobileCoreServices.framework in Frameworks */,
 				8AF0072E1AAB6EF2000568E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +203,8 @@
 		8A113E6C1AAE0DD4007A8263 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D1A391AB0AC1D0092E60D /* HFViewController.h */,
+				8A5D1A3A1AB0AC1D0092E60D /* HFViewController.m */,
 				8A113E6D1AAE0DE4007A8263 /* MainViewController.h */,
 				8A113E6E1AAE0DE4007A8263 /* MainViewController.m */,
 				8A113E6F1AAE0DE4007A8263 /* SidebarViewController.h */,
@@ -191,6 +213,8 @@
 				8A113E721AAE0DE4007A8263 /* MapViewController.m */,
 				8A113E731AAE0DE4007A8263 /* PhotoViewController.h */,
 				8A113E741AAE0DE4007A8263 /* PhotoViewController.m */,
+				8A53B6331AAF5F1A001B6A4D /* faProfileViewController.h */,
+				8A53B6341AAF5F1A001B6A4D /* faProfileViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -217,6 +241,8 @@
 		8AF0072C1AAB6EF2000568E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D1A3E1AB0B02D0092E60D /* CoreLocation.framework */,
+				8A5D1A3C1AB0B0240092E60D /* MobileCoreServices.framework */,
 				8A113E441AAE0894007A8263 /* FacebookSDK.framework */,
 				8AF0072D1AAB6EF2000568E4 /* Foundation.framework */,
 				8AF0072F1AAB6EF2000568E4 /* CoreGraphics.framework */,
@@ -284,6 +310,10 @@
 		8AF007691AAB700F000568E4 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				8A53B6311AAF590F001B6A4D /* editePics.png */,
+				8A53B62F1AAF58DC001B6A4D /* Edit.png */,
+				8A53B62B1AAF5892001B6A4D /* profile.png */,
+				8A53B62D1AAF58A3001B6A4D /* Albums.png */,
 				8AF0076A1AAB7017000568E4 /* images */,
 			);
 			name = resource;
@@ -382,6 +412,7 @@
 				8A113E641AAE0D6B007A8263 /* bookmark.png in Resources */,
 				8A113E5C1AAE0D6B007A8263 /* comments_photo.jpg in Resources */,
 				8A113E5D1AAE0D6B007A8263 /* bookmark_photo.jpg in Resources */,
+				8A53B6321AAF590F001B6A4D /* editePics.png in Resources */,
 				8A113E601AAE0D6B007A8263 /* wishlist_photo.jpg in Resources */,
 				8A113E661AAE0D6B007A8263 /* comments.png in Resources */,
 				8AF007381AAB6EF2000568E4 /* InfoPlist.strings in Resources */,
@@ -390,13 +421,16 @@
 				8A113E7C1AAE1753007A8263 /* 1.jpg in Resources */,
 				8A113E651AAE0D6B007A8263 /* calendar.png in Resources */,
 				8A113E5F1AAE0D6B007A8263 /* calendar_photo.jpg in Resources */,
+				8A53B6301AAF58DC001B6A4D /* Edit.png in Resources */,
 				8A113E6A1AAE0D6B007A8263 /* tag.png in Resources */,
 				8A113E611AAE0D6B007A8263 /* menu.png in Resources */,
 				8A113E7A1AAE1511007A8263 /* teamslaay.png in Resources */,
 				8A113E5E1AAE0D6B007A8263 /* tag_photo.jpg in Resources */,
 				8A113E691AAE0D6B007A8263 /* photo.png in Resources */,
 				8AF007411AAB6EF2000568E4 /* Main.storyboard in Resources */,
+				8A53B62C1AAF5892001B6A4D /* profile.png in Resources */,
 				8A113E631AAE0D6B007A8263 /* nav_bg.png in Resources */,
+				8A53B62E1AAF58A3001B6A4D /* Albums.png in Resources */,
 				8AF0076C1AAB7025000568E4 /* sample.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF0073A1AAB6EF2000568E4 /* main.m in Sources */,
+				8A53B6351AAF5F1A001B6A4D /* faProfileViewController.m in Sources */,
 				8A113E751AAE0DE4007A8263 /* MainViewController.m in Sources */,
 				8AF0073E1AAB6EF2000568E4 /* faAppDelegate.m in Sources */,
 				8A113E771AAE0DE4007A8263 /* MapViewController.m in Sources */,
@@ -424,6 +459,7 @@
 				8A113E4A1AAE0D4A007A8263 /* SWRevealViewController.m in Sources */,
 				8A113E781AAE0DE4007A8263 /* PhotoViewController.m in Sources */,
 				8AF007681AAB6F73000568E4 /* ImageFiltersViewController.m in Sources */,
+				8A5D1A3B1AB0AC1D0092E60D /* HFViewController.m in Sources */,
 				8AF007441AAB6EF2000568E4 /* faViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
