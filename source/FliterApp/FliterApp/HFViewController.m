@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+//http://stackoverflow.com/questions/11889725/how-can-i-convert-fbprofilepictureview-to-an-uiimage?rq=1
+//http://stackoverflow.com/questions/12387988/how-to-programmatically-allign-a-button-in-ios-applications
 
 #import "HFViewController.h"
 
@@ -40,6 +42,8 @@
 - (IBAction)postPhotoOrVideoClick:(UIButton *)sender;
 - (IBAction)pickFriendsClick:(UIButton *)sender;
 - (IBAction)pickPlaceClick:(UIButton *)sender;
+
+- (IBAction)btnRefresh:(id)sender;
 
 - (void)showAlert:(NSString *)message
            result:(id)result
@@ -71,9 +75,10 @@
     loginview.delegate = self;
     
     // Align the button in the center horizontally
-    loginview.frame = CGRectOffset(loginview.frame, (self.view.center.x - (loginview.frame.size.width / 2)), 35);
+    float Y_Co = self.view.frame.size.height - loginview.frame.size.height;
+    float X_Co = (self.view.frame.size.width - loginview.frame.size.width)/2;
+    [loginview setFrame:CGRectMake(X_Co, Y_Co - 5, loginview.frame.size.width , loginview.frame.size.height)];
     [self.view addSubview:loginview];
-
     [loginview sizeToFit];
     
     
@@ -90,8 +95,6 @@
     [self roundedControls:_profilePic];
     
     self.blurView.blurRadius = 20;
-    
-    
 }
 
 
@@ -148,6 +151,8 @@
     // causes the control to fetch and display the profile picture for the user
     self.profilePic.profileID = user.objectID;
     self.loggedInUser = user;
+    [self getProfileImage];
+
 }
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
@@ -435,6 +440,10 @@
      }];
 }
 
+
+
+
+
 // UIAlertView helper for post buttons
 - (void)showAlert:(NSString *)message
            result:(id)result
@@ -477,6 +486,56 @@
     }
 }
 
+// leee code
+
+- (void)getProfileImage {
+    
+    [[FBRequest requestForMe] startWithCompletionHandler:
+     ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+         if (!error) {
+             
+             _labelFirstName.text = user.name;
+             _profilePic.profileID = user.objectID;
+             
+             //NOTE THIS LINE WHICH DOES THE MAGIC
+             
+             [self performSelector:@selector(getUserImageFromFBView) withObject:nil afterDelay:1.0];
+         }
+     }];
+}
+    
+- (void)getUserImageFromFBView{
+        
+        UIImage *img = nil;
+        
+        //1 - Solution to get UIImage obj
+        
+        for (NSObject *obj in [_profilePic subviews]) {
+            if ([obj isMemberOfClass:[UIImageView class]]) {
+                UIImageView *objImg = (UIImageView *)obj;
+                img = objImg.image;
+                break;
+            }
+        }
+        
+        //2 - Solution to get UIImage obj
+        
+        //    UIGraphicsBeginImageContext(profileDP.frame.size);
+        //    [profileDP.layer renderInContext:UIGraphicsGetCurrentContext()];
+        //    img = UIGraphicsGetImageFromCurrentImageContext();
+        //    UIGraphicsEndImageContext();
+        
+        //Here I'm setting image and it works 100% for me.
+    
+    _imgBlur.image = img;
+    _imgBlur.contentMode = UIViewContentModeScaleAspectFill;
+
+    
+    }
+
+- (IBAction)btnRefresh:(id)sender {
+    [self getProfileImage];
+}
 
 
 @end
