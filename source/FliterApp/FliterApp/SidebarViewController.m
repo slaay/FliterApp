@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 
-    menuItems = @[@"title",@"profile", @"Photos", @"teamSlaay", @"aboutapp", @"thirdparty"];
+    menuItems = @[@"title",@"profile", @"Photos", @"teamSlaay", @"aboutapp", @"thirdparty", @"fbPhotos"];
     
     //Remove Extra empty cells at the bottom
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];

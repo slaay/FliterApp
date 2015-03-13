@@ -31,6 +31,12 @@
 		8A113E781AAE0DE4007A8263 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A113E741AAE0DE4007A8263 /* PhotoViewController.m */; };
 		8A113E7A1AAE1511007A8263 /* teamslaay.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A113E791AAE1511007A8263 /* teamslaay.png */; };
 		8A113E7C1AAE1753007A8263 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A113E7B1AAE1753007A8263 /* 1.jpg */; };
+		8A4F19651AB2136C00AF2A31 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F19641AB2136C00AF2A31 /* 01.jpg */; };
+		8A4F19671AB2155F00AF2A31 /* Apps-image-viewer-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F19661AB2155F00AF2A31 /* Apps-image-viewer-icon.png */; };
+		8A4F19711AB2163B00AF2A31 /* icon_58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F196E1AB2163B00AF2A31 /* icon_58x58.png */; };
+		8A4F19721AB2163B00AF2A31 /* icon_80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F196F1AB2163B00AF2A31 /* icon_80x80.png */; };
+		8A4F19731AB2163B00AF2A31 /* icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F19701AB2163B00AF2A31 /* icon_120x120.png */; };
+		8A5033D81AB34DB90009229A /* faFbPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5033D71AB34DB90009229A /* faFbPhotos.m */; };
 		8A53B62C1AAF5892001B6A4D /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62B1AAF5892001B6A4D /* profile.png */; };
 		8A53B62E1AAF58A3001B6A4D /* Albums.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62D1AAF58A3001B6A4D /* Albums.png */; };
 		8A53B6301AAF58DC001B6A4D /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62F1AAF58DC001B6A4D /* Edit.png */; };
@@ -98,6 +104,13 @@
 		8A113E741AAE0DE4007A8263 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		8A113E791AAE1511007A8263 /* teamslaay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teamslaay.png; sourceTree = "<group>"; };
 		8A113E7B1AAE1753007A8263 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		8A4F19641AB2136C00AF2A31 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
+		8A4F19661AB2155F00AF2A31 /* Apps-image-viewer-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apps-image-viewer-icon.png"; sourceTree = "<group>"; };
+		8A4F196E1AB2163B00AF2A31 /* icon_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_58x58.png; sourceTree = "<group>"; };
+		8A4F196F1AB2163B00AF2A31 /* icon_80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80x80.png; sourceTree = "<group>"; };
+		8A4F19701AB2163B00AF2A31 /* icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120x120.png; sourceTree = "<group>"; };
+		8A5033D61AB34DB90009229A /* faFbPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faFbPhotos.h; path = controllers/faFbPhotos.h; sourceTree = "<group>"; };
+		8A5033D71AB34DB90009229A /* faFbPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = faFbPhotos.m; path = controllers/faFbPhotos.m; sourceTree = "<group>"; };
 		8A53B62B1AAF5892001B6A4D /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		8A53B62D1AAF58A3001B6A4D /* Albums.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Albums.png; sourceTree = "<group>"; };
 		8A53B62F1AAF58DC001B6A4D /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
@@ -218,6 +231,8 @@
 				8A113E741AAE0DE4007A8263 /* PhotoViewController.m */,
 				8A53B6331AAF5F1A001B6A4D /* faProfileViewController.h */,
 				8A53B6341AAF5F1A001B6A4D /* faProfileViewController.m */,
+				8A5033D61AB34DB90009229A /* faFbPhotos.h */,
+				8A5033D71AB34DB90009229A /* faFbPhotos.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -335,6 +350,11 @@
 		8AF0076A1AAB7017000568E4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8A4F196E1AB2163B00AF2A31 /* icon_58x58.png */,
+				8A4F196F1AB2163B00AF2A31 /* icon_80x80.png */,
+				8A4F19701AB2163B00AF2A31 /* icon_120x120.png */,
+				8A4F19661AB2155F00AF2A31 /* Apps-image-viewer-icon.png */,
+				8A4F19641AB2136C00AF2A31 /* 01.jpg */,
 				8A113E7B1AAE1753007A8263 /* 1.jpg */,
 				8A113E4B1AAE0D52007A8263 /* slidebar */,
 				8AF0076B1AAB7025000568E4 /* sample.jpg */,
@@ -419,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4F19731AB2163B00AF2A31 /* icon_120x120.png in Resources */,
 				8A113E621AAE0D6B007A8263 /* menu@2x.png in Resources */,
 				8AF007461AAB6EF2000568E4 /* Images.xcassets in Resources */,
 				8A113E6B1AAE0D6B007A8263 /* wishlist.png in Resources */,
@@ -429,6 +450,7 @@
 				8A113E601AAE0D6B007A8263 /* wishlist_photo.jpg in Resources */,
 				8A113E661AAE0D6B007A8263 /* comments.png in Resources */,
 				8AF007381AAB6EF2000568E4 /* InfoPlist.strings in Resources */,
+				8A4F19671AB2155F00AF2A31 /* Apps-image-viewer-icon.png in Resources */,
 				8A113E681AAE0D6B007A8263 /* news.png in Resources */,
 				8A113E671AAE0D6B007A8263 /* map.png in Resources */,
 				8A113E7C1AAE1753007A8263 /* 1.jpg in Resources */,
@@ -439,12 +461,15 @@
 				8A113E611AAE0D6B007A8263 /* menu.png in Resources */,
 				8A113E7A1AAE1511007A8263 /* teamslaay.png in Resources */,
 				8A113E5E1AAE0D6B007A8263 /* tag_photo.jpg in Resources */,
+				8A4F19721AB2163B00AF2A31 /* icon_80x80.png in Resources */,
 				8A113E691AAE0D6B007A8263 /* photo.png in Resources */,
 				8AF007411AAB6EF2000568E4 /* Main.storyboard in Resources */,
+				8A4F19711AB2163B00AF2A31 /* icon_58x58.png in Resources */,
 				8A53B62C1AAF5892001B6A4D /* profile.png in Resources */,
 				8A113E631AAE0D6B007A8263 /* nav_bg.png in Resources */,
 				8A53B62E1AAF58A3001B6A4D /* Albums.png in Resources */,
 				8AF0076C1AAB7025000568E4 /* sample.jpg in Resources */,
+				8A4F19651AB2136C00AF2A31 /* 01.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +490,7 @@
 			files = (
 				8AF0073A1AAB6EF2000568E4 /* main.m in Sources */,
 				8A53B6351AAF5F1A001B6A4D /* faProfileViewController.m in Sources */,
+				8A5033D81AB34DB90009229A /* faFbPhotos.m in Sources */,
 				8A113E751AAE0DE4007A8263 /* MainViewController.m in Sources */,
 				8AF0073E1AAB6EF2000568E4 /* faAppDelegate.m in Sources */,
 				8A113E771AAE0DE4007A8263 /* MapViewController.m in Sources */,
@@ -597,7 +623,6 @@
 		8AF0075D1AAB6EF2000568E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -614,7 +639,6 @@
 		8AF0075E1AAB6EF2000568E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

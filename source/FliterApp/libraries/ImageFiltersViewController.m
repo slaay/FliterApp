@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    self.orgImage = [UIImage imageNamed:@"1.jpg"];
+    self.orgImage = [UIImage imageNamed:@"sample.jpg"];
     self.imageView.image = self.orgImage;
     
     self.items = @[@"Original",

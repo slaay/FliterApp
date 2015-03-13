@@ -538,4 +538,145 @@
 }
 
 
+- (IBAction)btnGetAlbumList:(id)sender {
+    //Get Album list
+//    [FBRequestConnection startWithGraphPath:@"me/albums"
+//                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                              if (!error) {
+//                                  // Success! Include your code to handle the results here
+//                                  NSLog(@"user events: %@", result);
+//                                  NSArray *feed =[result objectForKey:@"data"];
+//                                  
+//                                  for (NSDictionary *dict in feed) {
+//                                      
+//                                      NSLog(@"first %@",dict);
+//                                      
+//                                  }
+//                              } else {
+//                                  // An error occurred, we need to handle the error
+//                                  // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
+//                                  NSLog(@"error %@", error.description);
+//                              }
+//                          }];
+//    
+    
+    
+//  user information
+    //https://developers.facebook.com/docs/ios/graph#userinfo
+//    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//        if (!error) {
+//            // Success! Include your code to handle the results here
+//            NSLog(@"user info: %@", result);
+//        } else {
+//            // An error occurred, we need to handle the error
+//            // See: https://developers.facebook.com/docs/ios/errors
+//        }
+//    }];
+    
+    
+    
+    
+//    // We will request the user's public profile and the user's birthday
+//    // These are the permissions we need:
+//    NSArray *permissionsNeeded = @[@"user_photos"];
+//    
+//    // Request the permissions the user currently has
+//    [FBRequestConnection startWithGraphPath:@"/me/permissions"
+//                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                              if (!error){
+//                                  
+//                                  // Request permissions in active session with  FBSession.activeSession.accessTokenData.permissions
+//                                  // Then current permissions the user has:
+//                                  NSDictionary *currentPermissions= [(NSArray *)[result data] objectAtIndex:0];
+//                                  
+//                                  // We will store here the missing permissions that we will have to request
+//                                  NSMutableArray *requestPermissions = [[NSMutableArray alloc] initWithArray:@[]];
+//                                  
+//                                  // Check if all the permissions we need are present in the user's current permissions
+//                                  // If they are not present add them to the permissions to be requested
+//                                  for (NSString *permission in permissionsNeeded){
+//                                      if (![currentPermissions objectForKey:permission]){
+//                                          [requestPermissions addObject:permission];
+//                                      }
+//                                  }
+//                                  
+//                                  // If we have permissions to request
+//                                  if ([requestPermissions count] > 0){
+//                                      // Ask for the missing permissions
+//                                      [FBSession.activeSession
+//                                       requestNewReadPermissions:requestPermissions
+//                                       completionHandler:^(FBSession *session, NSError *error) {
+//                                           if (!error) {
+//                                               // Permission granted
+//                                               NSLog(@"new permissions %@", [FBSession.activeSession permissions]);
+//                                               // We can request the user information
+//
+//                                           } else {
+//                                               // An error occurred, we need to handle the error
+//                                               // See: https://developers.facebook.com/docs/ios/errors
+//                                           }
+//                                       }];
+//                                  } else {
+//                                      // Permissions are present
+//                                      // We can request the user information
+//                                      
+//                                          [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                                             if (!error) {
+//                                                  // Success! Include your code to handle the results here
+//                                                  NSLog(@"user info: %@", result);
+//                                              } else {
+//                                                 // An error occurred, we need to handle the error
+//                                                  // See: https://developers.facebook.com/docs/ios/errors
+//                                              }
+//                                          }];
+//
+//                                  }
+//                                  
+//                              } else {
+//                                  // An error occurred, we need to handle the error
+//                                  // See: https://developers.facebook.com/docs/ios/errors
+//                                  
+//                                  [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                                      if (!error) {
+//                                          // Success! Include your code to handle the results here
+//                                          NSLog(@"user info: %@", result);
+//                                      } else {
+//                                          // An error occurred, we need to handle the error
+//                                          // See: https://developers.facebook.com/docs/ios/errors
+//                                      }
+//                                  }];
+//                              }
+//                          }];
+//    
+    
+    
+    
+    [FBRequestConnection startWithGraphPath:@"/929970610354997/photos"
+                          completionHandler:^(
+                                              FBRequestConnection *connection,
+                                              id result,
+                                              NSError *error
+                                              ) {
+                              if (!error) {
+                                                                    // Success! Include your code to handle the results here
+                                                                    NSLog(@"user events: %@", result);
+                                                                    NSArray *feed =[result objectForKey:@"data"];
+                                  
+                                                                    for (NSDictionary *dict in feed) {
+                                  
+                                                                        NSLog(@"first %@",dict);
+                                  
+                                                                    }
+                                                                } else {
+                                                                    // An error occurred, we need to handle the error
+                                                                    // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
+                                                                    NSLog(@"error %@", error.description);
+                                                               }
+
+                          }];
+    
+    
+    
+    
+}
 @end

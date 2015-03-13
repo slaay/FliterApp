@@ -21,4 +21,6 @@
 @interface HFViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
+- (IBAction)btnGetAlbumList:(id)sender;
+
 @end
