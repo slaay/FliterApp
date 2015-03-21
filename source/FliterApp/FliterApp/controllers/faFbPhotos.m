@@ -7,6 +7,7 @@
 // http://stackoverflow.com/a/6159418/1051198
 //https://searchcode.com/codesearch/view/25749028/
 //http://www.itexico.com/blog/bid/101321/Working-with-Facebook-Graph-API-for-iOS-Apps
+//https://gist.github.com/ekoneil/3178821
 
 #import "faFbPhotos.h"
 #import "SWRevealViewController.h"
@@ -25,7 +26,11 @@
 
 
 
-@implementation faFbPhotos
+@implementation faFbPhotos {
+    UIView *overlay;
+    UIActivityIndicatorView *spinner;
+
+}
 
 
 
@@ -107,6 +112,12 @@
 }
 */
 
+- (IBAction)btnAlubm:(id)sender {
+    [self getAlbumCoverPhotoByAlbumID:494170180601711];
+    //[self requestAlbums];
+    
+}
+
 - (IBAction)btnReload:(id)sender {
               [self.albumTableView reloadData];
 }
@@ -149,65 +160,66 @@
 
 -(void)getPhotoByAlbumID:(id)albumID{
     
-    NSString *albumIDValue = [NSString stringWithFormat:@"/%@/photos", albumID];
+   // NSString *albumIDValue = [NSString stringWithFormat:@"/%@/photos", albumID];
 
     
-    [FBRequestConnection startWithGraphPath:albumIDValue completionHandler:^(
-                                              FBRequestConnection *connection,
-                                              id result,
-                                              NSError *error
-                                              )
-     {
-          if (!error) {
-              // Success! Include your code to handle the results here
-              NSLog(@"user events: %@", result);
-              NSArray *feed =[result objectForKey:@"data"];
-              
-              for (NSDictionary *dict in feed) {
-                  
-                  NSLog(@"first %@",dict);
-                  
-              }
-          } else {
-              // An error occurred, we need to handle the error
-              // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
-              NSLog(@"error %@", error.description);
-          }
-         
-      }
-    ];
-    
-    
+    // /albums[0]/photos
+     NSString* photos = [NSString stringWithFormat:@"%@/photos", albumID];
+    [FBRequestConnection startWithGraphPath:photos
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              
+                              NSArray* photos = (NSArray*)[result data];
+                              NSLog(@"Photo Array %@", photos);
+                             
+                              NSDictionary *dictionary = [photos objectAtIndex:0];
+                              NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+                              NSLog(@"URL %@", coverPicURL);
+                              
+                          }];
+
 }
 
 
+-(void)getAlbumCoverPhotoByAlbumID:(NSInteger)albumID{
+    // /albums[0]/photos
+    NSString* photos = [NSString stringWithFormat:@"%ld/photos", (long)albumID];
+    [FBRequestConnection startWithGraphPath:photos
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              
+                              
+                              NSArray* photos = (NSArray*)[result data];
+                              //NSLog(@"photos %@", photos);
+                              NSDictionary *dictionary = [photos objectAtIndex:0];
+                              NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+                              NSLog(@"URL %@", coverPicURL);
+                              
+                          }];
+}
 
-//- (void)showSpinner{
-//    UIView *overlay = [[UIView alloc] initWithFrame:self.view.frame];
-//    overlay.backgroundColor = [UIColor blackColor];
-//    overlay.alpha = 0.5f;
-//    
-//    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-//    [spinner startAnimating];
-//    spinner.center = overlay.center;
-//    [overlay addSubview:spinner];
-//    
-//    [self.view addSubview:overlay];
-//}
+
+- (void)showSpinner:(int)showSpinner{
+    
+    if (showSpinner == 1){
+        overlay = [[UIView alloc] initWithFrame:self.view.frame];
+        overlay.backgroundColor = [UIColor blackColor];
+        overlay.alpha = 0.5f;
+        
+        spinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        [spinner startAnimating];
+        spinner.center = overlay.center;
+        [overlay addSubview:spinner];
+        
+        [self.view addSubview:overlay];
+    } else if (showSpinner == 0){
+        [spinner stopAnimating];
+        [overlay removeFromSuperview];
+    }
+}
 
 
 - (IBAction)btnGetAlbumList:(id)sender {
-    UIView *overlay = [[UIView alloc] initWithFrame:self.view.frame];
-    overlay.backgroundColor = [UIColor lightGrayColor];
-    overlay.alpha = 0.5f;
-
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [spinner startAnimating];
-    spinner.center = overlay.center;
-    [overlay addSubview:spinner];
-
-    [self.view addSubview:overlay];
     
+    [self showSpinner:1];
     [_albumArray removeAllObjects]; //clear the aray
     _albumDictionary = [[NSMutableDictionary alloc] init];
     [_albumDictionary removeAllObjects]; //Clear the whole dictionary
@@ -222,7 +234,7 @@
               NSString* albumImgURL;
               NSString* albumName;
               NSArray *feed =[result objectForKey:@"data"];
-              
+                  NSLog(@"feed %@", feed);
               for (NSDictionary *dict in feed) {
                   
                   albumsID = [dict objectForKey:@"id"];
@@ -238,106 +250,51 @@
 
               }
               NSLog(@"dictionary %@", _albumArray);
-              [spinner stopAnimating];
-              [overlay removeFromSuperview];
+              [self showSpinner:0];
               [self.albumTableView reloadData];
              
           } else {
               // An error occurred, we need to handle the error
               // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
               NSLog(@"error %@", error.description);
-              [spinner stopAnimating];
-              [overlay removeFromSuperview];
+              [self showSpinner:0];
           }
       }];
 }
 
-//-(void)getFriendsArray
-//{
-//    //Create a shadow view to create a user feedback loading animator
-//    UIView *shadowView = [[UIView alloc]initWithFrame:self.navigationController.view.frame];
-//    [self.navigationController.view addSubview:shadowView];
-//    [shadowView setBackgroundColor:[[UIColor blackColor]colorWithAlphaComponent:0.6]];
-//    //Add and activity indicator
-//    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-//    [activityIndicator setFrame:CGRectMake(self.view.center.x - 25, self.view.center.y - 25, 50, 50)];
-//    UILabel *loadingLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.view.center.x -25, self.view.center.y + 25, 100, 30)];
-//    [loadingLabel setText:@"Loading..."];
-//    [loadingLabel setTextColor:[UIColor whiteColor]];
-//    //Star animating while the method is executed
-//    [activityIndicator startAnimating];
-//    
-//    [shadowView addSubview:activityIndicator];
-//    [shadowView addSubview:loadingLabel];
-//    
-//    
-//    //Call the method to get facebook friends declared below
-//    [self getFacebookFriends:^(NSArray *successArray) {
-//        //Receive the array that is generated after success
-//        self.albumArrayNs = successArray;
-//        NSLog(@"Array from the thread : %@", _albumArray);
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            //Once the method is completed stop the animation of the activity indicator and remove the shadow view.
-//            [activityIndicator stopAnimating];
-//            [shadowView removeFromSuperview];
-//        });
-//    } error:^(NSString *errorString) {
-//        [activityIndicator stopAnimating];
-//        [shadowView removeFromSuperview];
-//    }];
-//}
 
-
-//-(void)getFacebookFriends: (FriendsCallbackSuccess)success error:(FriendsCallbackError)inError
-//{
-//    
-//    
-//    [_albumArray removeAllObjects]; //clear the aray
-//    _albumDictionary = [[NSMutableDictionary alloc] init];
-//    [_albumDictionary removeAllObjects]; //Clear the whole dictionary
-//    
-//    //Get Album list
-//    [FBRequestConnection startWithGraphPath:@"me/albums"
-//                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//                              if (!error) {
-//                                  self.success = success;
-//                                  
-//                                  NSString* albumsID;
-//                                  NSString* albumImgURL;
-//                                  NSString* albumName;
-//                                  NSArray *feed =[result objectForKey:@"data"];
-//                                  
-//                                  for (NSDictionary *dict in feed) {
-//                                      
-//                                      albumsID = [dict objectForKey:@"id"];
-//                                      albumImgURL = [dict objectForKey:@"cover_photo"];
-//                                      albumName = [dict objectForKey:@"name"];
-//                                      NSLog(@"Id %@", albumsID);
-//
-//                                      //if ((![albumsID isEqual:[NSNull null]]) && (![albumImgURL isEqual:[NSNull nil]]) &&
-//                                      //(![albumName isEqual:[NSNull null]])){
-//                                      
-//                                      if ((!albumsID.length) && (!albumName.length) && (!albumImgURL.length)) {
-//                                      
-//                                      _albumDictionary = @{@"albumName":albumName, @"albumID":albumsID, @"albumImgURL":albumImgURL};
-//                                      }
-//                                      
-//                                     // [_albumArrayNs addObject:_albumDictionary];
-//                                      [_albumArray addObject:_albumDictionary];
-//                                     // NSLog(@"dictionary %@", _albumDictionary);
-//                                  }
-//                                  
-//                                   success(_albumArrayNs);
-//                              } else {
-//                                  // An error occurred, we need to handle the error
-//                                  // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
-//                                  NSLog(@"error %@", error.description);
-//                                  NSLog(@"ERROR: %@", error);
-//                                  self.error = inError;
-//
-//                              } }];
-//   
-//}
+// #3: Graph API: /me/albums && /{albums[0]}/photos
+-(void)requestAlbums {
+    [FBRequestConnection startWithGraphPath:@"/me/albums"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if(error) {
+                                  //[self printError:@"Error requesting /me/albums" error:error];
+                                  return;
+                              }
+                              
+                              NSArray* collection = (NSArray*)[result data];
+                              NSLog(@"You have %lu albums", (unsigned long)[collection count]);
+                              
+                              NSDictionary* album = [collection objectAtIndex:0];
+                              NSLog(@"Album ID: %@", [album objectForKey:@"id"]);
+                              
+                              // /albums[0]/photos
+                              NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
+                              [FBRequestConnection startWithGraphPath:photos
+                                                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                                       
+                                                        
+                                                        NSArray* photos = (NSArray*)[result data];
+                                                        NSLog(@"photos %@", photos);
+                                                        NSLog(@"You have %lu photo(s) in the album %@",                                                              (unsigned long)[photos count],
+                                                              [album objectForKey:@"name"]);
+                                                        NSDictionary *dictionary = [photos objectAtIndex:0];
+                                                        NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+                                                        NSLog(@"URL %@", coverPicURL);
+                                                        
+                                                    }];
+                          }];
+}
 
 //tableview controller-----------------------------------------------------------
 
@@ -351,9 +308,6 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    // The header for the section is the region name -- get this from the region at the section index.
-   // Region *region = [regions objectAtIndex:section];
-   // return [region name];
     return @"Albums";
 }
 

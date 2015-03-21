@@ -16,9 +16,9 @@
 @property (strong, nonatomic) IBOutlet UITableView *albumTableView;
 @property (strong, nonatomic) IBOutlet UIImageView *imgCellAlbum;
 
+- (IBAction)btnAlubm:(id)sender;
 
 
-@property (strong, nonatomic) IBOutlet UIImageView *im;
 - (IBAction)btnReload:(id)sender;
 - (IBAction)btnGetAlbumList:(id)sender;
 @end
