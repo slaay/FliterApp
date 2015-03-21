@@ -36,6 +36,8 @@
 		8A4F19711AB2163B00AF2A31 /* icon_58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F196E1AB2163B00AF2A31 /* icon_58x58.png */; };
 		8A4F19721AB2163B00AF2A31 /* icon_80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F196F1AB2163B00AF2A31 /* icon_80x80.png */; };
 		8A4F19731AB2163B00AF2A31 /* icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F19701AB2163B00AF2A31 /* icon_120x120.png */; };
+		8A4F982F1ABD6FC10095415C /* faAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F982E1ABD6FC10095415C /* faAlbumCell.m */; };
+		8A4F98311ABD73190095415C /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F98301ABD73190095415C /* album.png */; };
 		8A5033D81AB34DB90009229A /* faFbPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5033D71AB34DB90009229A /* faFbPhotos.m */; };
 		8A53B62C1AAF5892001B6A4D /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62B1AAF5892001B6A4D /* profile.png */; };
 		8A53B62E1AAF58A3001B6A4D /* Albums.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62D1AAF58A3001B6A4D /* Albums.png */; };
@@ -109,6 +111,9 @@
 		8A4F196E1AB2163B00AF2A31 /* icon_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_58x58.png; sourceTree = "<group>"; };
 		8A4F196F1AB2163B00AF2A31 /* icon_80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80x80.png; sourceTree = "<group>"; };
 		8A4F19701AB2163B00AF2A31 /* icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120x120.png; sourceTree = "<group>"; };
+		8A4F982D1ABD6FC10095415C /* faAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faAlbumCell.h; path = controllers/faAlbumCell.h; sourceTree = "<group>"; };
+		8A4F982E1ABD6FC10095415C /* faAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = faAlbumCell.m; path = controllers/faAlbumCell.m; sourceTree = "<group>"; };
+		8A4F98301ABD73190095415C /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
 		8A5033D61AB34DB90009229A /* faFbPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faFbPhotos.h; path = controllers/faFbPhotos.h; sourceTree = "<group>"; };
 		8A5033D71AB34DB90009229A /* faFbPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = faFbPhotos.m; path = controllers/faFbPhotos.m; sourceTree = "<group>"; };
 		8A53B62B1AAF5892001B6A4D /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
@@ -233,6 +238,8 @@
 				8A53B6341AAF5F1A001B6A4D /* faProfileViewController.m */,
 				8A5033D61AB34DB90009229A /* faFbPhotos.h */,
 				8A5033D71AB34DB90009229A /* faFbPhotos.m */,
+				8A4F982D1ABD6FC10095415C /* faAlbumCell.h */,
+				8A4F982E1ABD6FC10095415C /* faAlbumCell.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 				8A53B62F1AAF58DC001B6A4D /* Edit.png */,
 				8A53B62B1AAF5892001B6A4D /* profile.png */,
 				8A53B62D1AAF58A3001B6A4D /* Albums.png */,
+				8A4F98301ABD73190095415C /* album.png */,
 				8AF0076A1AAB7017000568E4 /* images */,
 			);
 			name = resource;
@@ -452,6 +460,7 @@
 				8AF007381AAB6EF2000568E4 /* InfoPlist.strings in Resources */,
 				8A4F19671AB2155F00AF2A31 /* Apps-image-viewer-icon.png in Resources */,
 				8A113E681AAE0D6B007A8263 /* news.png in Resources */,
+				8A4F98311ABD73190095415C /* album.png in Resources */,
 				8A113E671AAE0D6B007A8263 /* map.png in Resources */,
 				8A113E7C1AAE1753007A8263 /* 1.jpg in Resources */,
 				8A113E651AAE0D6B007A8263 /* calendar.png in Resources */,
@@ -494,6 +503,7 @@
 				8A113E751AAE0DE4007A8263 /* MainViewController.m in Sources */,
 				8AF0073E1AAB6EF2000568E4 /* faAppDelegate.m in Sources */,
 				8A113E771AAE0DE4007A8263 /* MapViewController.m in Sources */,
+				8A4F982F1ABD6FC10095415C /* faAlbumCell.m in Sources */,
 				8A5D1A441AB0BB100092E60D /* FXBlurView.m in Sources */,
 				8A113E761AAE0DE4007A8263 /* SidebarViewController.m in Sources */,
 				8A113E4A1AAE0D4A007A8263 /* SWRevealViewController.m in Sources */,

@@ -14,8 +14,11 @@
 @property (retain, nonatomic) NSMutableDictionary *albumDictionary;
 @property (strong, nonatomic) NSMutableArray *albumArray;
 @property (strong, nonatomic) IBOutlet UITableView *albumTableView;
+@property (strong, nonatomic) IBOutlet UIImageView *imgCellAlbum;
 
 
+
+@property (strong, nonatomic) IBOutlet UIImageView *im;
 - (IBAction)btnReload:(id)sender;
 - (IBAction)btnGetAlbumList:(id)sender;
 @end
