@@ -538,6 +538,11 @@
 }
 
 
+
+
+
+
+
 - (IBAction)btnGetAlbumList:(id)sender {
     //Get Album list
 //    [FBRequestConnection startWithGraphPath:@"me/albums"
@@ -658,20 +663,20 @@
                                               NSError *error
                                               ) {
                               if (!error) {
-                                                                    // Success! Include your code to handle the results here
-                                                                    NSLog(@"user events: %@", result);
-                                                                    NSArray *feed =[result objectForKey:@"data"];
-                                  
-                                                                    for (NSDictionary *dict in feed) {
-                                  
-                                                                        NSLog(@"first %@",dict);
-                                  
-                                                                    }
-                                                                } else {
-                                                                    // An error occurred, we need to handle the error
-                                                                    // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
-                                                                    NSLog(@"error %@", error.description);
-                                                               }
+                                            // Success! Include your code to handle the results here
+                                            NSLog(@"user events: %@", result);
+                                            NSArray *feed =[result objectForKey:@"data"];
+          
+                                            for (NSDictionary *dict in feed) {
+          
+                                                NSLog(@"first %@",dict);
+          
+                                            }
+                                            } else {
+                                                // An error occurred, we need to handle the error
+                                                // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
+                                                NSLog(@"error %@", error.description);
+                                           }
 
                           }];
     

@@ -10,6 +10,12 @@
 
 @interface faFbPhotos : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (strong, nonatomic) IBOutlet UITextView *memoAlbums;
+@property (retain, nonatomic) NSMutableDictionary *albumDictionary;
+@property (strong, nonatomic) NSMutableArray *albumArray;
+@property (strong, nonatomic) IBOutlet UITableView *albumTableView;
 
+
+- (IBAction)btnReload:(id)sender;
 - (IBAction)btnGetAlbumList:(id)sender;
 @end
