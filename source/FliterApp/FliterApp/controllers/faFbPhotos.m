@@ -14,6 +14,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "faAppDelegate.h"
 #import "faAlbumCell.h"
+#import "AMTumblrHud.h"
 
 
 
@@ -29,6 +30,7 @@
 @implementation faFbPhotos {
     UIView *overlay;
     UIActivityIndicatorView *spinner;
+    AMTumblrHud *tumblrHUD;
 
 }
 
@@ -113,8 +115,8 @@
 */
 
 - (IBAction)btnAlubm:(id)sender {
-    [self getAlbumCoverPhotoByAlbumID:494170180601711];
-    //[self requestAlbums];
+    //[self getAlbumCoverPhotoByAlbumID:494170180601711];
+    [self requestAlbums];
     
 }
 
@@ -216,6 +218,20 @@
     }
 }
 
+-(void)AmTumblrHUD:(int)toggleHUD{
+    if (toggleHUD == 1) {
+  
+        tumblrHUD = [[AMTumblrHud alloc] initWithFrame:CGRectMake((CGFloat) ((self.view.frame.size.width - 55) * 0.5),
+                                                                               (CGFloat) ((self.view.frame.size.height - 20) * 0.5), 55, 20)];
+        tumblrHUD.hudColor = [UIColor magentaColor];
+        [self.view addSubview:tumblrHUD];
+        
+        [tumblrHUD showAnimated:YES];
+    } else if (toggleHUD == 0){
+        [tumblrHUD hide];
+    }
+}
+
 
 - (IBAction)btnGetAlbumList:(id)sender {
     
@@ -263,37 +279,65 @@
 }
 
 
+//-(void)requestAlbums {
+//    [FBRequestConnection startWithGraphPath:@"/me/albums"
+//                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                              if(error) {
+//                                  //[self printError:@"Error requesting /me/albums" error:error];
+//                                  return;
+//                              }
+//                              
+//                              NSArray* collection = (NSArray*)[result data];
+//                              NSLog(@"You have %lu albums", (unsigned long)[collection count]);
+//                              
+//                              NSDictionary* album = [collection objectAtIndex:0];
+//                              NSLog(@"Album ID: %@", [album objectForKey:@"id"]);
+//                              
+//                              // /albums[0]/photos
+//                              NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
+//                              [FBRequestConnection startWithGraphPath:photos
+//                                                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                                                        
+//                                                        
+//                                                        NSArray* photos = (NSArray*)[result data];
+//                                                        NSLog(@"photos %@", photos);
+//                                                        NSLog(@"You have %lu photo(s) in the album %@",                                                              (unsigned long)[photos count],
+//                                                              [album objectForKey:@"name"]);
+//                                                        NSDictionary *dictionary = [photos objectAtIndex:0];
+//                                                        NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+//                                                        NSLog(@"URL %@", coverPicURL);
+//                                                        
+//                                                    }];
+//                          }];
+//}
+
 // #3: Graph API: /me/albums && /{albums[0]}/photos
 -(void)requestAlbums {
+    [self showSpinner:1];
     [FBRequestConnection startWithGraphPath:@"/me/albums"
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              if(error) {
-                                  //[self printError:@"Error requesting /me/albums" error:error];
-                                  return;
-                              }
-                              
-                              NSArray* collection = (NSArray*)[result data];
-                              NSLog(@"You have %lu albums", (unsigned long)[collection count]);
-                              
-                              NSDictionary* album = [collection objectAtIndex:0];
-                              NSLog(@"Album ID: %@", [album objectForKey:@"id"]);
-                              
-                              // /albums[0]/photos
-                              NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
-                              [FBRequestConnection startWithGraphPath:photos
-                                                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                                                       
-                                                        
-                                                        NSArray* photos = (NSArray*)[result data];
-                                                        NSLog(@"photos %@", photos);
-                                                        NSLog(@"You have %lu photo(s) in the album %@",                                                              (unsigned long)[photos count],
-                                                              [album objectForKey:@"name"]);
-                                                        NSDictionary *dictionary = [photos objectAtIndex:0];
-                                                        NSString *coverPicURL = [dictionary objectForKey:@"picture"];
-                                                        NSLog(@"URL %@", coverPicURL);
-                                                        
-                                                    }];
-                          }];
+      completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+          if(error) {
+              //[self printError:@"Error requesting /me/albums" error:error];
+              return;
+          }
+          
+          NSArray* collection = (NSArray*)[result data];
+          for (id arrayValue in collection) {
+              NSDictionary* album = arrayValue;
+              NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
+              [FBRequestConnection startWithGraphPath:photos
+                                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                        NSArray* photos = (NSArray*)[result data];
+                                        NSDictionary *dictionary = [photos objectAtIndex:0];
+                                        NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+                                        NSLog(@"URL %@", coverPicURL);
+                                        
+                                    }];
+          }
+          
+              [self showSpinner:0];
+    }];
+
 }
 
 //tableview controller-----------------------------------------------------------
