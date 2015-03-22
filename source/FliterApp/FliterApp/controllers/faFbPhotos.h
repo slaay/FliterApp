@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *memoAlbums;
 @property (retain, nonatomic) NSMutableDictionary *albumDictionary;
 @property (strong, nonatomic) NSMutableArray *albumArray;
+@property (strong, nonatomic) NSMutableArray *albumCoverPhotoURL;
 @property (strong, nonatomic) IBOutlet UITableView *albumTableView;
 @property (strong, nonatomic) IBOutlet UIImageView *imgCellAlbum;
 

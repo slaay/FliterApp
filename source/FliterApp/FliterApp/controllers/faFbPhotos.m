@@ -15,10 +15,12 @@
 #import "faAppDelegate.h"
 #import "faAlbumCell.h"
 #import "AMTumblrHud.h"
+#import "UIImageView+AFNetworking.h"
 
 
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
-@interface faFbPhotos ()<FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface faFbPhotos ()<FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 
 
 
@@ -52,10 +54,34 @@
     self.title = @"FB Photos";
     [self slideMenuSetup];
     [self facebookSession];
+    [self setUpSwipeGesture];
+     _albumArray = [[NSMutableArray alloc]init];
+    _albumCoverPhotoURL = [[NSMutableArray alloc]init];
     
 
-    _albumArray = [[NSMutableArray alloc]init];
 }
+
+-(void)setUpSwipeGesture{
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                     action:@selector(upDownSwipeGesture:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+    [self.albumTableView addGestureRecognizer:recognizer];
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                           action:@selector(upDownSwipeGesture:)];
+    recognizer.delegate = self;
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+    [self.albumTableView addGestureRecognizer:recognizer];
+}
+
+
+- (void)upDownSwipeGesture:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    //do you left swipe stuff here.
+    NSLog(@"swipe gesture here!");
+}
+
+
+
 
 -(void)slideMenuSetup{
     // Change button color
@@ -85,16 +111,6 @@
         #endif
     #endif
     loginview.delegate = self;
-
-//    // Align the button in the center horizontally
-//    float Y_Co = self.view.frame.size.height - loginview.frame.size.height;
-//    float X_Co = (self.view.frame.size.width - loginview.frame.size.width)/2;
-//    [loginview setFrame:CGRectMake(X_Co, Y_Co - 5, loginview.frame.size.width , loginview.frame.size.height)];
-//    [self.view addSubview:loginview];
-//    [loginview sizeToFit];
-
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,8 +131,6 @@
 */
 
 - (IBAction)btnAlubm:(id)sender {
-    //[self getAlbumCoverPhotoByAlbumID:494170180601711];
-    [self requestAlbums];
     
 }
 
@@ -126,7 +140,7 @@
 
 
 
--(NSString*)getPhotoImgURLFromID:(id)photoID{
+//-(NSString*)getPhotoImgURLFromID:(id)photoID{
 //  
 //    NSString *albumIDValue = [NSString stringWithFormat:@"/%@/photos", photoID];
 //    
@@ -157,46 +171,46 @@
 //     ];
 //
 //    
-   return @"";
-}
+//   return @"";
+//}
 
--(void)getPhotoByAlbumID:(id)albumID{
-    
-   // NSString *albumIDValue = [NSString stringWithFormat:@"/%@/photos", albumID];
+//-(void)getPhotoByAlbumID:(id)albumID{
+//    
+//   // NSString *albumIDValue = [NSString stringWithFormat:@"/%@/photos", albumID];
+//
+//    
+//    // /albums[0]/photos
+//     NSString* photos = [NSString stringWithFormat:@"%@/photos", albumID];
+//    [FBRequestConnection startWithGraphPath:photos
+//                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                              
+//                              NSArray* photos = (NSArray*)[result data];
+//                              NSLog(@"Photo Array %@", photos);
+//                             
+//                              NSDictionary *dictionary = [photos objectAtIndex:0];
+//                              NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+//                              NSLog(@"URL %@", coverPicURL);
+//                              
+//                          }];
+//
+//}
 
-    
-    // /albums[0]/photos
-     NSString* photos = [NSString stringWithFormat:@"%@/photos", albumID];
-    [FBRequestConnection startWithGraphPath:photos
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              
-                              NSArray* photos = (NSArray*)[result data];
-                              NSLog(@"Photo Array %@", photos);
-                             
-                              NSDictionary *dictionary = [photos objectAtIndex:0];
-                              NSString *coverPicURL = [dictionary objectForKey:@"picture"];
-                              NSLog(@"URL %@", coverPicURL);
-                              
-                          }];
 
-}
-
-
--(void)getAlbumCoverPhotoByAlbumID:(NSInteger)albumID{
-    // /albums[0]/photos
-    NSString* photos = [NSString stringWithFormat:@"%ld/photos", (long)albumID];
-    [FBRequestConnection startWithGraphPath:photos
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              
-                              
-                              NSArray* photos = (NSArray*)[result data];
-                              //NSLog(@"photos %@", photos);
-                              NSDictionary *dictionary = [photos objectAtIndex:0];
-                              NSString *coverPicURL = [dictionary objectForKey:@"picture"];
-                              NSLog(@"URL %@", coverPicURL);
-                              
-                          }];
-}
+//-(void)getAlbumCoverPhotoByAlbumID:(NSInteger)albumID{
+//    // /albums[0]/photos
+//    NSString* photos = [NSString stringWithFormat:@"%ld/photos", (long)albumID];
+//    [FBRequestConnection startWithGraphPath:photos
+//                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                              
+//                              
+//                              NSArray* photos = (NSArray*)[result data];
+//                              //NSLog(@"photos %@", photos);
+//                              NSDictionary *dictionary = [photos objectAtIndex:0];
+//                              NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+//                              NSLog(@"URL %@", coverPicURL);
+//                              
+//                          }];
+//}
 
 
 - (void)showSpinner:(int)showSpinner{
@@ -218,23 +232,23 @@
     }
 }
 
--(void)AmTumblrHUD:(int)toggleHUD{
-    if (toggleHUD == 1) {
-  
-        tumblrHUD = [[AMTumblrHud alloc] initWithFrame:CGRectMake((CGFloat) ((self.view.frame.size.width - 55) * 0.5),
-                                                                               (CGFloat) ((self.view.frame.size.height - 20) * 0.5), 55, 20)];
-        tumblrHUD.hudColor = [UIColor magentaColor];
-        [self.view addSubview:tumblrHUD];
-        
-        [tumblrHUD showAnimated:YES];
-    } else if (toggleHUD == 0){
-        [tumblrHUD hide];
-    }
-}
+//-(void)AmTumblrHUD:(int)toggleHUD{
+//    if (toggleHUD == 1) {
+//  
+//        tumblrHUD = [[AMTumblrHud alloc] initWithFrame:CGRectMake((CGFloat) ((self.view.frame.size.width - 55) * 0.5),
+//                                                                               (CGFloat) ((self.view.frame.size.height - 20) * 0.5), 55, 20)];
+//        tumblrHUD.hudColor = [UIColor magentaColor];
+//        [self.view addSubview:tumblrHUD];
+//        
+//        [tumblrHUD showAnimated:YES];
+//    } else if (toggleHUD == 0){
+//        [tumblrHUD hide];
+//    }
+//}
 
 
-- (IBAction)btnGetAlbumList:(id)sender {
-    
+
+-(void)getAllbumsInArray{
     [self showSpinner:1];
     [_albumArray removeAllObjects]; //clear the aray
     _albumDictionary = [[NSMutableDictionary alloc] init];
@@ -250,32 +264,40 @@
               NSString* albumImgURL;
               NSString* albumName;
               NSArray *feed =[result objectForKey:@"data"];
-                  NSLog(@"feed %@", feed);
+             // NSLog(@"feed %@", feed);
               for (NSDictionary *dict in feed) {
                   
                   albumsID = [dict objectForKey:@"id"];
                   albumImgURL = [dict objectForKey:@"cover_photo"];
                   albumName = [dict objectForKey:@"name"];
-                  NSLog(@"Id %@", albumsID);
+                  //NSLog(@"Id %@", albumsID);
                   if ((albumsID.length > 0) && (albumName.length > 0) && (albumImgURL.length > 0)) {
                       
                       _albumDictionary = @{@"albumName":albumName, @"albumID":albumsID, @"albumImgURL":albumImgURL};
-                     [_albumArray addObject:_albumDictionary];
+                      [_albumArray addObject:_albumDictionary];
                   }
-
-
+                  
+                  
               }
-              NSLog(@"dictionary %@", _albumArray);
+              //NSLog(@"dictionary %@", _albumArray);
               [self showSpinner:0];
               [self.albumTableView reloadData];
-             
+              [self requestAlbumsPhotoURL];
+              
           } else {
               // An error occurred, we need to handle the error
               // Check out our error handling guide: https://developers.facebook.com/docs/ios/errors/
               NSLog(@"error %@", error.description);
               [self showSpinner:0];
           }
-      }];
+    }];
+
+}
+
+
+- (IBAction)btnGetAlbumList:(id)sender {
+  //  [self getAllbumsInArray];
+    [self requestAlbumsPhotoURL];
 }
 
 
@@ -311,32 +333,87 @@
 //                          }];
 //}
 
+//// #3: Graph API: /me/albums && /{albums[0]}/photos
+//-(void)requestAlbums {
+//    [self showSpinner:1];
+//    [FBRequestConnection startWithGraphPath:@"/me/albums"
+//      completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//          if(error) {
+//              //[self printError:@"Error requesting /me/albums" error:error];
+//              return;
+//          }
+//          
+//          NSArray* collection = (NSArray*)[result data];
+//          for (id arrayValue in collection) {
+//              NSDictionary* album = arrayValue;
+//              NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
+//              [FBRequestConnection startWithGraphPath:photos
+//                                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                                        NSArray* photos = (NSArray*)[result data];
+//                                        NSDictionary *dictionary = [photos objectAtIndex:0];
+//                                        NSString *coverPicURL = [dictionary objectForKey:@"picture"];
+//                                        NSLog(@"URL %@", coverPicURL);
+//                                        
+//                                    }];
+//          }
+//          
+//              [self showSpinner:0];
+//    }];
+//
+//}
+
+
 // #3: Graph API: /me/albums && /{albums[0]}/photos
--(void)requestAlbums {
+-(void)requestAlbumsPhotoURL {
+    
     [self showSpinner:1];
+    [_albumArray removeAllObjects]; //clear the aray
+    _albumDictionary = [[NSMutableDictionary alloc] init];
+    [_albumDictionary removeAllObjects]; //Clear the whole dictionary
+    
     [FBRequestConnection startWithGraphPath:@"/me/albums"
       completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
           if(error) {
               //[self printError:@"Error requesting /me/albums" error:error];
               return;
-          }
+          } else {
           
-          NSArray* collection = (NSArray*)[result data];
-          for (id arrayValue in collection) {
-              NSDictionary* album = arrayValue;
-              NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
-              [FBRequestConnection startWithGraphPath:photos
-                                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                                        NSArray* photos = (NSArray*)[result data];
-                                        NSDictionary *dictionary = [photos objectAtIndex:0];
-                                        NSString *coverPicURL = [dictionary objectForKey:@"picture"];
-                                        NSLog(@"URL %@", coverPicURL);
-                                        
-                                    }];
+              NSArray* collection = (NSArray*)[result data];
+              //NSLog(@"Album array : %@", collection);
+              for (id arrayValue in collection) {
+                  NSDictionary* album = arrayValue;
+                  NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
+                  [FBRequestConnection startWithGraphPath:photos
+                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                        if (!error) {
+                        
+                            NSArray* photos = (NSArray*)[result data];
+                            NSDictionary *dictionary = [photos objectAtIndex:0];
+                            
+                            NSString *albumsID = [dictionary objectForKey:@"id"];
+                            NSString *albumImgURL = [dictionary objectForKey:@"picture"];
+                            NSString *albumName = [dictionary objectForKey:@"name"];
+                          
+                            if ((albumsID.length > 0) && (albumName.length > 0) && (albumImgURL.length > 0)) {
+                                
+                                _albumDictionary = @{@"albumName":albumName, @"albumID":albumsID, @"albumImgURL":albumImgURL};
+                                [_albumArray addObject:_albumDictionary];
+                                NSLog(@" ");
+                                NSLog(@"albumsID %@:", albumsID);
+                                NSLog(@"albumImgURL %@ :", albumImgURL);
+                                NSLog(@"albumName %@ :", albumName);
+                            }
+          [self.albumTableView reloadData];
+                    }
+
+                        
+                    }];
+
+              }
           }
-          
-              [self showSpinner:0];
-    }];
+          [self showSpinner:0];
+          [self.albumTableView reloadData];
+      }];
 
 }
 
@@ -357,13 +434,34 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+  
+   
+//    faAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//    NSUInteger row = [indexPath row];
+//   // NSLog(@"content of the cell from the array %@", [_albumArray objectAtIndex:row]);
+//    cell.lblalumbName.text = [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumName"];
+//    cell.lblalbumID.text =  [NSString stringWithFormat:@"Album ID : %@", [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumID"]];
+//    cell.imageView.image = [[UIImage imageNamed:@"album.png"] init];
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    return cell;
+    
     faAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    NSUInteger row = [indexPath row];
-    NSLog(@"content of the cell from the array %@", [_albumArray objectAtIndex:row]);
+    
+    if (cell == nil)
+    {
+        cell = [[faAlbumCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    
     cell.lblalumbName.text = [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumName"];
-    //cell.lblalbumID.text = [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumID"];
+    cell.lblalbumID.text =  [NSString stringWithFormat:@"Album ID : %@", [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumID"]];
     cell.imageView.image = [[UIImage imageNamed:@"album.png"] init];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+     NSString *imgURL = [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumImgURL"];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:imgURL] placeholderImage:[UIImage imageNamed:@"album.png"]];
+
+    
     return cell;
     
 }
