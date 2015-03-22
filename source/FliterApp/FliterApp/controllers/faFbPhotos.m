@@ -8,6 +8,7 @@
 //https://searchcode.com/codesearch/view/25749028/
 //http://www.itexico.com/blog/bid/101321/Working-with-Facebook-Graph-API-for-iOS-Apps
 //https://gist.github.com/ekoneil/3178821
+//http://stackoverflow.com/questions/1130089/lazy-load-images-in-uitableview?rq=1
 
 #import "faFbPhotos.h"
 #import "SWRevealViewController.h"
@@ -296,7 +297,6 @@
 
 
 - (IBAction)btnGetAlbumList:(id)sender {
-  //  [self getAllbumsInArray];
     [self requestAlbumsPhotoURL];
 }
 
@@ -394,6 +394,10 @@
                             NSString *albumImgURL = [dictionary objectForKey:@"picture"];
                             NSString *albumName = [dictionary objectForKey:@"name"];
                           
+                            if ((albumName.length == 0)) {
+                                albumName = @"No name";
+                            }
+                            
                             if ((albumsID.length > 0) && (albumName.length > 0) && (albumImgURL.length > 0)) {
                                 
                                 _albumDictionary = @{@"albumName":albumName, @"albumID":albumsID, @"albumImgURL":albumImgURL};
@@ -403,16 +407,15 @@
                                 NSLog(@"albumImgURL %@ :", albumImgURL);
                                 NSLog(@"albumName %@ :", albumName);
                             }
-          [self.albumTableView reloadData];
+                            [self.albumTableView reloadData];
                     }
-
-                        
                     }];
 
               }
+              [self showSpinner:0];
+              [self.albumTableView reloadData];
           }
-          [self showSpinner:0];
-          [self.albumTableView reloadData];
+
       }];
 
 }
@@ -434,17 +437,6 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-  
-   
-//    faAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//    NSUInteger row = [indexPath row];
-//   // NSLog(@"content of the cell from the array %@", [_albumArray objectAtIndex:row]);
-//    cell.lblalumbName.text = [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumName"];
-//    cell.lblalbumID.text =  [NSString stringWithFormat:@"Album ID : %@", [[_albumArray objectAtIndex:indexPath.row] objectForKey:@"albumID"]];
-//    cell.imageView.image = [[UIImage imageNamed:@"album.png"] init];
-//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    return cell;
     
     faAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
