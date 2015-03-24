@@ -511,15 +511,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="69" id="kPd-lY-R04" customClass="faAlbumCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="69" id="kPd-lY-R04" customClass="faAlbumCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kPd-lY-R04" id="1Pz-U8-bPM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XzO-dZ-kS8">
-                                                    <rect key="frame" x="8" y="1" width="64" height="64"/>
+                                                    <rect key="frame" x="8" y="1" width="31" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3h-Fe-TnA">
@@ -541,6 +541,7 @@
                                             <outlet property="lblalbumID" destination="Zss-KB-U6h" id="zal-g2-gTG"/>
                                             <outlet property="lblalumbName" destination="B3h-Fe-TnA" id="gFJ-n8-r90"/>
                                             <outlet property="thumbnailImageView" destination="XzO-dZ-kS8" id="CHV-fY-vDn"/>
+                                            <segue destination="Cz5-oc-cio" kind="modal" identifier="seguefbphotolist" id="g9K-ai-thT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -568,7 +569,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUl-p5-H16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="-1195"/>
+            <point key="canvasLocation" x="1294" y="-2424"/>
+        </scene>
+        <!--Fa Album Photo List View Controller-->
+        <scene sceneID="s5y-eV-2PS">
+            <objects>
+                <viewController id="Cz5-oc-cio" customClass="faAlbumPhotoListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HmT-M6-W1V"/>
+                        <viewControllerLayoutGuide type="bottom" id="MNc-pg-3eQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XVo-J3-Db1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GZQ-9N-1z5">
+                                <rect key="frame" x="0.0" y="242" width="320" height="326"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-nt-pDO">
+                                <rect key="frame" x="0.0" y="65" width="320" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pk2-Ip-DRH"/>
+                    <connections>
+                        <outlet property="imgAlbumCover" destination="8qf-nt-pDO" id="h44-UK-roG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0CA-RJ-3JC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708" y="-2430"/>
         </scene>
     </scenes>
     <resources>

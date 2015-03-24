@@ -45,6 +45,7 @@
 		8A53B6301AAF58DC001B6A4D /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B62F1AAF58DC001B6A4D /* Edit.png */; };
 		8A53B6321AAF590F001B6A4D /* editePics.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A53B6311AAF590F001B6A4D /* editePics.png */; };
 		8A53B6351AAF5F1A001B6A4D /* faProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A53B6341AAF5F1A001B6A4D /* faProfileViewController.m */; };
+		8A5A4EB41AC0818A0011DC8E /* faAlbumPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5A4EB31AC0818A0011DC8E /* faAlbumPhotoListViewController.m */; };
 		8A5D1A3B1AB0AC1D0092E60D /* HFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D1A3A1AB0AC1D0092E60D /* HFViewController.m */; };
 		8A5D1A3D1AB0B0240092E60D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D1A3C1AB0B0240092E60D /* MobileCoreServices.framework */; };
 		8A5D1A3F1AB0B02D0092E60D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D1A3E1AB0B02D0092E60D /* CoreLocation.framework */; };
@@ -142,6 +143,8 @@
 		8A53B6311AAF590F001B6A4D /* editePics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editePics.png; sourceTree = "<group>"; };
 		8A53B6331AAF5F1A001B6A4D /* faProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faProfileViewController.h; path = controllers/faProfileViewController.h; sourceTree = "<group>"; };
 		8A53B6341AAF5F1A001B6A4D /* faProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = faProfileViewController.m; path = controllers/faProfileViewController.m; sourceTree = "<group>"; };
+		8A5A4EB21AC0818A0011DC8E /* faAlbumPhotoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faAlbumPhotoListViewController.h; path = controllers/faAlbumPhotoListViewController.h; sourceTree = "<group>"; };
+		8A5A4EB31AC0818A0011DC8E /* faAlbumPhotoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = faAlbumPhotoListViewController.m; path = controllers/faAlbumPhotoListViewController.m; sourceTree = "<group>"; };
 		8A5D1A391AB0AC1D0092E60D /* HFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFViewController.h; sourceTree = "<group>"; };
 		8A5D1A3A1AB0AC1D0092E60D /* HFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFViewController.m; sourceTree = "<group>"; };
 		8A5D1A3C1AB0B0240092E60D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -296,6 +299,8 @@
 				8A5033D71AB34DB90009229A /* faFbPhotos.m */,
 				8A4F982D1ABD6FC10095415C /* faAlbumCell.h */,
 				8A4F982E1ABD6FC10095415C /* faAlbumCell.m */,
+				8A5A4EB21AC0818A0011DC8E /* faAlbumPhotoListViewController.h */,
+				8A5A4EB31AC0818A0011DC8E /* faAlbumPhotoListViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 				8A9E77701ABF1B96004CD634 /* AFURLConnectionOperation.m in Sources */,
 				8A9E77731ABF1B96004CD634 /* AFURLSessionManager.m in Sources */,
 				8A113E751AAE0DE4007A8263 /* MainViewController.m in Sources */,
+				8A5A4EB41AC0818A0011DC8E /* faAlbumPhotoListViewController.m in Sources */,
 				8AF0073E1AAB6EF2000568E4 /* faAppDelegate.m in Sources */,
 				8A9E77871ABF1BB4004CD634 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				8A113E771AAE0DE4007A8263 /* MapViewController.m in Sources */,

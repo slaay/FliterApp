@@ -17,6 +17,7 @@
 #import "faAlbumCell.h"
 #import "AMTumblrHud.h"
 #import "UIImageView+AFNetworking.h"
+#import "faAlbumPhotoListViewController.h"
 
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
@@ -34,6 +35,7 @@
     UIView *overlay;
     UIActivityIndicatorView *spinner;
     AMTumblrHud *tumblrHUD;
+
 
 }
 
@@ -457,4 +459,52 @@
     return cell;
     
 }
+
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+//         NSLog(@"I am didSelectRowAtIndexPath");
+//    // Find the selected cell in the usual way
+//    faAlbumCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    _imgLargAlbumcover = cell.imageView.image;
+//    // Check if this is the cell I want to segue from by using the reuseIdenifier
+//    // which I set in the "Identifier" field in Interface Builder
+//    if ([cell.reuseIdentifier isEqualToString:@"cell"]) {
+//            [self performSegueWithIdentifier:@"seguefbphotolist" sender:cell];
+//    }
+}
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+     NSLog(@"I am prepareForSegue");
+//     // Make sure your segue name in storyboard is the same as this line
+//     if ([[segue identifier] isEqualToString:@"seguefbphotolist"])
+//     {
+//         faAlbumPhotoListViewController *vc = [segue destinationViewController];
+//         [vc configureWithImage:_imgLargAlbumcover];
+//
+//     }
+     
+     if ([[segue identifier] isEqualToString: @"seguefbphotolist"]) {
+         //pass values
+         NSLog(@"The sender is %@",sender);
+         
+         NSIndexPath *indexPath = [self.albumTableView indexPathForCell:sender];
+         //    // Find the selected cell in the usual way
+         faAlbumCell *cell = [_albumTableView cellForRowAtIndexPath:indexPath];
+         _imgLargAlbumcover = cell.imageView.image;
+         faAlbumPhotoListViewController *vc = [segue destinationViewController];
+         [vc configureDetails:_imgLargAlbumcover :@"Hello"];
+         //vc.locTitle = [myValue valueForKeyPath:@"title"];
+         //dest.locInfo = [myValue valueForKeyPath:@"info"];
+         
+         //NSLog(@"The title is: %@, and the info is: %@.",dest.locTitle,dest.locInfo);
+     }
+ }
+
+
 @end

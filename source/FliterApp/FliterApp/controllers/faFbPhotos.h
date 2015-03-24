@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *albumCoverPhotoURL;
 @property (strong, nonatomic) IBOutlet UITableView *albumTableView;
 @property (strong, nonatomic) IBOutlet UIImageView *imgCellAlbum;
+@property (nonatomic, strong) UIImage *imgLargAlbumcover;
 
 - (IBAction)btnAlubm:(id)sender;
 
