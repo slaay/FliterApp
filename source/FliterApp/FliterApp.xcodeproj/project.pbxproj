@@ -83,6 +83,7 @@
 		8AF007591AAB6EF2000568E4 /* FliterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF007581AAB6EF2000568E4 /* FliterAppTests.m */; };
 		8AF007681AAB6F73000568E4 /* ImageFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF007671AAB6F73000568E4 /* ImageFiltersViewController.m */; };
 		8AF0076C1AAB7025000568E4 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AF0076B1AAB7025000568E4 /* sample.jpg */; };
+		8AF2932E1AC9B8B600E55584 /* faAboutApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2932D1AC9B8B600E55584 /* faAboutApp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +210,8 @@
 		8AF007661AAB6F73000568E4 /* ImageFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageFiltersViewController.h; path = libraries/ImageFiltersViewController.h; sourceTree = SOURCE_ROOT; };
 		8AF007671AAB6F73000568E4 /* ImageFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageFiltersViewController.m; path = libraries/ImageFiltersViewController.m; sourceTree = SOURCE_ROOT; };
 		8AF0076B1AAB7025000568E4 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		8AF2932C1AC9B8B600E55584 /* faAboutApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faAboutApp.h; path = controllers/faAboutApp.h; sourceTree = "<group>"; };
+		8AF2932D1AC9B8B600E55584 /* faAboutApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = faAboutApp.m; path = controllers/faAboutApp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +304,8 @@
 				8A4F982E1ABD6FC10095415C /* faAlbumCell.m */,
 				8A5A4EB21AC0818A0011DC8E /* faAlbumPhotoListViewController.h */,
 				8A5A4EB31AC0818A0011DC8E /* faAlbumPhotoListViewController.m */,
+				8AF2932C1AC9B8B600E55584 /* faAboutApp.h */,
+				8AF2932D1AC9B8B600E55584 /* faAboutApp.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 				8A9E778B1ABF1BB4004CD634 /* UIProgressView+AFNetworking.m in Sources */,
 				8A9E776D1ABF1B96004CD634 /* AFHTTPSessionManager.m in Sources */,
 				8A5033D81AB34DB90009229A /* faFbPhotos.m in Sources */,
+				8AF2932E1AC9B8B600E55584 /* faAboutApp.m in Sources */,
 				8A9E778A1ABF1BB4004CD634 /* UIImageView+AFNetworking.m in Sources */,
 				8A9E776E1ABF1B96004CD634 /* AFNetworkReachabilityManager.m in Sources */,
 				8A9E776B1ABF1B96004CD634 /* AFHTTPRequestOperation.m in Sources */,
