@@ -35,7 +35,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-  //  [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB6)];
+   [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x5BCAFF)];
+    //#34AADC
 
     // If you have not added the -ObjC linker flag, you may need to uncomment the following line because
     // Nib files require the type to have been loaded before they can do the wireup successfully.
