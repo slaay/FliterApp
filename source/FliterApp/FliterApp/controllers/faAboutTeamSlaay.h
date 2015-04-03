@@ -15,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgCashburn;
 @property (strong, nonatomic) IBOutlet UIImageView *imgAlison;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (strong, nonatomic) IBOutlet UIImageView *imgBackground;
+
 
 
 - (IBAction)btnSocialShare:(id)sender;
